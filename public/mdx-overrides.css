@@ -1,0 +1,77 @@
+/* MDXEditor theme overrides for high-contrast dark-ish editor */
+
+/* Root-level variables applied to our editor instances */
+.gf-mdx {
+  /* Base (neutral) palette */
+  --baseBase: #0b1220;
+  --baseBgSubtle: #0f172a; /* slate-900 */
+  --baseBg: #111827;       /* slate-900 */
+  --baseBgHover: #1f2937;  /* slate-800 */
+  --baseBgActive: #1f2937; /* slate-800 */
+  --baseLine: #374151;     /* slate-700 */
+  --baseBorder: #374151;   /* slate-700 */
+  --baseBorderHover: #4b5563; /* slate-600 */
+  --baseSolid: #1f2937;
+  --baseSolidHover: #374151;
+  --baseText: #e5e7eb;     /* gray-200 */
+  --baseTextContrast: #f9fafb; /* gray-50 */
+
+  /* Accent (indigo-ish) */
+  --accentBase: #111827;
+  --accentBgSubtle: #1e1b4b; /* indigo-950 */
+  --accentBg: #1e40af;       /* indigo-700 */
+  --accentBgHover: #4338ca;  /* indigo-600 */
+  --accentBgActive: #3730a3; /* indigo-700 */
+  --accentLine: #4f46e5;     /* indigo-500 */
+  --accentBorder: #6366f1;   /* indigo-400 */
+  --accentBorderHover: #818cf8; /* indigo-300 */
+  --accentSolid: #4f46e5;    /* indigo-500 */
+  --accentSolidHover: #6366f1; /* indigo-400 */
+  --accentText: #c7d2fe;     /* indigo-200 */
+  --accentTextContrast: #eef2ff; /* indigo-50 */
+
+  /* Page background used by popups */
+  --basePageBg: #0b1220;
+
+  /* Monospace font */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Make CodeMirror match the base colors */
+.gf-mdx .cm-editor {
+  background-color: var(--baseBg) !important;
+  color: var(--baseText) !important;
+}
+.gf-mdx .cm-content, .gf-mdx .cm-line {
+  color: var(--baseText) !important;
+}
+.gf-mdx .cm-gutters {
+  background-color: var(--baseBgSubtle) !important;
+  color: #94a3b8 !important; /* slate-400 */
+  border-right: 1px solid var(--baseLine) !important;
+}
+.gf-mdx .cm-activeLine {
+  background-color: rgba(255,255,255,0.05) !important;
+}
+.gf-mdx .cm-selectionBackground, .gf-mdx .cm-content ::selection {
+  background-color: rgba(99,102,241,0.30) !important; /* indigo-500/30 */
+}
+.gf-mdx .cm-cursor { border-left-color: #f3f4f6 !important; }
+.gf-mdx .cm-tooltip {
+  background: var(--baseBgSubtle) !important;
+  color: var(--baseText) !important;
+  border: 1px solid var(--baseBorder) !important;
+}
+
+/* Toolbar and popups readability */
+.gf-mdx.mdxeditor .mdxeditor-toolbar {
+  background: var(--baseBg) !important;
+  border-color: var(--baseLine) !important;
+}
+.gf-mdx .mdxeditor-select-content { max-height: 60vh; }
+
+/* Hide the popup container that appears as black div */
+.mdxeditor-popup-container {
+  display: none !important;
+}
+

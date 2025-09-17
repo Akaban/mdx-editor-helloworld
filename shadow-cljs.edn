@@ -1,0 +1,23 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+ "src/main"
+ "src/test"]
+
+ :dependencies
+ [[lilactown/helix "0.2.1"]]
+
+ :dev-http {8080 "public"}
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+        :compiler-options {:output-feature-set :es-next}
+        :js-options {
+                     :resolve {
+                               "@radix-ui/react-collection" {:target :file :file "src/js/radix-react-collection.js"}
+                               "@codemirror/lang-php" {:target :file :file "src/js/codemirror-lang-php.js"}}
+                     }
+        :modules {:main {:init-fn app.main/init}}
+        :devtools {:after-load app.main/reload}}}}
